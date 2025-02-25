@@ -25,33 +25,50 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h2>High-Level Deployment and Configuration Steps</h2>
 
-- Step 1
-- Step 2
-- Step 3
-- Step 4
+- Create Virtual Machines 
+- Configure Network Settings
+- Allow Firewall Permissions
+- Install Active Directory
 
 <h2>Deployment and Configuration Steps</h2>
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+
+  
+![image](https://github.com/user-attachments/assets/aa2cca08-2159-4366-896f-a10f35ba5bd8)
+
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+  
+Provision Azure Virtual Machines: Create two virtual machines in Azure. One will serve as the Domain Controller (DC) running Windows Server, and the other will be a client machine running Windows 11. 
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+  ![image](https://github.com/user-attachments/assets/db87d851-8ebf-47d7-a89c-ffa38d1daefa)
+
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Configure Networking: Ensure connectivity between the two virtual machines by configuring the virtual network and subnet settings. Enable Remote Desktop access on both machines. 
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+  ![image](https://github.com/user-attachments/assets/fc3a815d-bff8-45bb-bbea-05d7fd56153e)
+
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+  
+Install Active Directory Domain Services: On the Windows Server VM, use the Server Manager to install the "Active Directory Domain Services" role. Promote the server to a Domain Controller and create a new domain
 </p>
 <br />
+
+
+![image](https://github.com/user-attachments/assets/3d1b0502-70cb-41e8-8f2e-a92b9fe4df57)
+
+Join Client to Domain: On the Windows 10 VM, adjust the network settings to use the Domain Controller's IP address as the primary DNS server. Join the client machine to the newly created domain and validate connectivity.
+
